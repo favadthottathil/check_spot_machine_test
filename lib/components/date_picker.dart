@@ -6,11 +6,13 @@ void selectedDate(BuildContext context) async {
   DateTime? picked = await showDatePicker(
     context: context,
     firstDate: DateTime(1990),
+    initialDate: DateTime.now(),
     lastDate: DateTime.now(),
+    initialDatePickerMode: DatePickerMode.year,
   );
 
   if (picked != null) {
     // ignore: use_build_context_synchronously
-    Provider.of<AgeController>(context,listen: false).selectedDate = picked;
+    Provider.of<AgeController>(context, listen: false).selectedDate = picked;
   }
 }
